@@ -35,7 +35,7 @@ public class Comentario {
     public Comentario() {
     }
 
-    public Comentario(int id,Usuario autor, String contenido, Date fechayHora) {
+    public Comentario(Usuario autor, String contenido, Date fechayHora) {
         this.autor = autor;
         this.id=id;
         this.contenido = contenido;

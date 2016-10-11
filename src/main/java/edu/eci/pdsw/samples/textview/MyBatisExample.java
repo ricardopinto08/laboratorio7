@@ -67,11 +67,7 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         try (SqlSession sqlss = sessionfact.openSession()) {
             EntradaForoMapper pedmp=sqlss.getMapper(EntradaForoMapper.class);
-            for(EntradaForo ef:pedmp.getEntradasForo()){
-                System.out.println(ef.);
-            }
-            //System.out.println(pedmp.getEntradasForo());
-            
+            System.out.println(pedmp.getEntradasForo());
             sqlss.commit();
         }
 
