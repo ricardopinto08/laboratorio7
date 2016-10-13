@@ -39,9 +39,9 @@
     <select id="getEntradaForo" resultMap="EntradaForoResult" parameterType="map">
     select ef.id, ef.fecha_hora, ef.contenido as contenido, cm.id as comen_id, cm.fecha_hora as comen_fecha_hora, cm.contenido as comen_contenido, autor.nombre as autEf_nombre, autor.email as autEf_email, autorcom.nombre as comen_autCo_nombre,  autorcom.email as comen_autCo_email
     from ENTRADAS_FOROS as ef 
-    INNER JOIN COMENTARIOS as cm ON ef.`id` = cm.`ENTRADAS_FOROS_id` 
-    INNER JOIN USUARIOS as autor ON autor.email=ef.USUARIOS_email
-    INNER JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
+    LEFT JOIN COMENTARIOS as cm ON ef.`id` = cm.`ENTRADAS_FOROS_id` 
+    LEFT JOIN USUARIOS as autor ON autor.email=ef.USUARIOS_email
+    LEFT JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
     WHERE ef.`id`=#{identificador}
     </select>
     
